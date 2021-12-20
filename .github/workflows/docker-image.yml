@@ -34,7 +34,7 @@ jobs:
         repository: luois45/webshare-proxy_ip-updater
         readme-filepath: ./DockerHub-README.md
     - name: Test the container
-      uses: docker://luois45/webshare-proxy_ip-updater:develop
+      uses: luois45/webshare-proxy_ip-updater:develop
       with:
        entrypoint: usr/local/bin/echo
        args: --env APIKEY="${{ secrets.WEBSHAREIO_APIKEY }}" --env DELAY="5"
