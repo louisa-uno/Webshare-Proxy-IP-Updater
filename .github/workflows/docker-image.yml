@@ -26,10 +26,10 @@ jobs:
        context: .
        push: true
        tags: luois45/webshare-proxy_ip-updater:develop
-    - name: Update repo description
+    - name: Update Hub Description
       uses: peter-evans/dockerhub-description@v2
       with:
-       username: ${{ secrets.DOCKERHUB_USERNAME }}
-       password: ${{ secrets.DOCKERHUB_PASSWORD }}
-       repository: luois45/webshare-proxy_ip-updater:develop
-       readme-filepath: ./DockerHub-README.md
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_PASSWORD }}
+        repository: luois45/webshare-proxy_ip-updater
+        readme-filepath: ./DockerHub-README.md
