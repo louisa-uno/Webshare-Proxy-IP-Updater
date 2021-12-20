@@ -1,6 +1,6 @@
 Hi,<br />
 This is a script that updates the authorized IP on webshare.io in an specified interval for you automatically.<br />
-Just run this command to run it on docker:
+Just run this command to run it with docker:
 ```
 docker run \
 --env APIKEY="YOUR_APIKEY" \
