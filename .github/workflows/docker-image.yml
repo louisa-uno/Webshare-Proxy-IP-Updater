@@ -10,9 +10,13 @@ jobs:
 
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        node_version: ['8', '10', '12']
+        os: [ubuntu-latest, windows-latest, macOS-latest]
 
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag luois45/webshare-proxy_ip-updater:$(date +%s)
+      run: docker build . --file Dockerfile --tag luois45/webshare-proxy_ip-updater:build$(date +%s)
