@@ -4,7 +4,7 @@ import logging
 import os
 
 apikey = os.environ['APIKEY']
-delay = int(os.environ['DELAY'].replace("'"))
+delay = int(os.environ['DELAY'])
 
 while True:
     ip = requests.get("https://api.ipify.org").text
