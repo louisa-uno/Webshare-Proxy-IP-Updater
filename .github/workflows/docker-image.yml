@@ -33,8 +33,3 @@ jobs:
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
         repository: luois45/webshare-proxy_ip-updater
         readme-filepath: ./DockerHub-README.md
-    - name: Test the container
-      uses: luois45/webshare-proxy_ip-updater:develop@v2
-      with:
-       entrypoint: usr/local/bin/echo
-       args: --env APIKEY="${{ secrets.WEBSHAREIO_APIKEY }}" --env DELAY="5"
