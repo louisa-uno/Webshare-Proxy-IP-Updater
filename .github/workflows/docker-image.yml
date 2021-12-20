@@ -16,8 +16,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag luois45/webshare-proxy_ip-updater:$(date +%s)
-
-
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v1
     - name: Set up Docker Buildx
@@ -32,10 +30,10 @@ jobs:
       with:
        context: .
        push: true
-       tags: luois45/webshare-proxy_ip-updater:$(date +%s)
+       tags: luois45/webshare-proxy_ip-updater:develop
     - name: Update repo description
       uses: peter-evans/dockerhub-description@v2
       with:
        username: ${{ secrets.DOCKERHUB_USERNAME }}
        password: ${{ secrets.DOCKERHUB_PASSWORD }}
-       repository: luois45/webshare-proxy_ip-updater:$(date +%s)
+       repository: luois45/webshare-proxy_ip-updater:develop
